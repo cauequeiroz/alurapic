@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule } from '@angular/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import 'rxjs/add/operator/map';
 
 import { AppComponent } from './app.component';
@@ -13,7 +13,7 @@ import { FotoModule } from './foto/foto.module';
 import { PainelModule } from './painel/painel.module';
 
 @NgModule({
-    imports: [ BrowserModule, HttpModule, FotoModule, PainelModule, routing, FormsModule ],
+    imports: [ BrowserModule, HttpModule, FotoModule, PainelModule, routing, FormsModule, ReactiveFormsModule ],
     declarations: [ AppComponent, CadastroComponent, ListagemComponent ],
     bootstrap: [ AppComponent ]
 })
