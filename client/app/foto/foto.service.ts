@@ -19,14 +19,29 @@ export class FotoService {
 
     cadastrar(foto: FotoComponent): Observable<Response> {
 
-        return this.http
-            .post(this.url, JSON.stringify(foto), { headers: this.headers });
+        if ( foto._id ) {
+
+            return this.http
+                .put(this.url + '/' + foto._id, JSON.stringify(foto), { headers: this.headers });
+        } else {
+            
+            return this.http
+                .post(this.url, JSON.stringify(foto), { headers: this.headers });
+        }
+
     }
 
     listar(): Observable<FotoComponent[]> {
         
         return this.http
             .get(this.url)
+            .map(res => res.json());
+    }
+
+    buscaPorId(id: string): Observable<FotoComponent> {
+
+        return this.http
+            .get(this.url + '/' + id)
             .map(res => res.json());
     }
 
