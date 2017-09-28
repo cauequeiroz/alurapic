@@ -11,9 +11,19 @@ import { routing } from './app.routes';
 
 import { FotoModule } from './foto/foto.module';
 import { PainelModule } from './painel/painel.module';
-
+import { BotaoModule } from './botao/botao.module';
+ 
 @NgModule({
-    imports: [ BrowserModule, HttpModule, FotoModule, PainelModule, routing, FormsModule, ReactiveFormsModule ],
+    imports: [
+        BrowserModule,
+        HttpModule,
+        FotoModule,
+        PainelModule,
+        BotaoModule,
+        routing,
+        FormsModule,
+        ReactiveFormsModule
+    ],
     declarations: [ AppComponent, CadastroComponent, ListagemComponent ],
     bootstrap: [ AppComponent ]
 })
